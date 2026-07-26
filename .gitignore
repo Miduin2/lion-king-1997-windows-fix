@@ -1,0 +1,44 @@
+# Visual Studio output
+.vs/
+build/
+Debug/
+Release/
+x64/
+x86/
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.tlog
+*.lastbuildstate
+
+# Compiled patch files belong in GitHub Releases
+*.dll
+*.exe
+
+# Original game and disc-image formats must never be committed
+*.bin
+*.cue
+*.iso
+*.img
+*.ccd
+*.sub
+*.mds
+*.mdf
+*.cab
+*.mid
+*.midi
+*.sam
+*.dat
+*.epf
+
+# Local backups, generated logs and temporary files
+*.gamevault-original
+*.gamevault-new
+*.log
+*.tmp
+*.bak
+*.zip
+
+# Keep the deliberately sanitized diagnostic evidence
+!diagnostics/*.log

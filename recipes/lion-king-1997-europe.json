@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "title": "Disney's The Lion King",
+  "edition": "Disney's Classic Video Games, European Windows release",
+  "year": 1997,
+  "target": "LIONW.EXE",
+  "original_sha256": "3E99DC48A4B347833E3857A13E0635AB9C5A262BBCD2DBB5304A7BBE0E45DEF3",
+  "patched_sha256": "AD28370116F86CEAAB87D77B66533018716CACB6E3E010ED63E3A053BA327EC8",
+  "edits": [
+    {
+      "offset": "0x2EA7",
+      "before": "7D",
+      "after": "EB",
+      "purpose": "Bypass obsolete colour-depth rejection"
+    },
+    {
+      "offset": "0x5A3F",
+      "before": "7F",
+      "after": "7D",
+      "purpose": "Accept valid EPFS descriptor zero"
+    },
+    {
+      "offset": "0xC165",
+      "before": "B4 02 CD 1A 66 33 D0 C1 E2 10 66 8B D1 66 33 D3 89 15 D8 EB 44 00 C3",
+      "after": "FF 15 74 41 45 00 A3 D8 EB 44 00 C3 90 90 90 90 90 90 90 90 90 90 90",
+      "purpose": "Replace obsolete BIOS clock interrupt with imported GetTickCount"
+    },
+    {
+      "offset": "0x3771",
+      "before": "FA",
+      "after": "90",
+      "purpose": "Remove privileged CLI instruction"
+    },
+    {
+      "offset": "0x377F",
+      "before": "FB",
+      "after": "90",
+      "purpose": "Remove privileged STI instruction"
+    },
+    {
+      "offset": "0x3D5B",
+      "before": "FA",
+      "after": "90",
+      "purpose": "Remove privileged CLI instruction"
+    },
+    {
+      "offset": "0x3D75",
+      "before": "FB",
+      "after": "90",
+      "purpose": "Remove privileged STI instruction"
+    }
+  ]
+}

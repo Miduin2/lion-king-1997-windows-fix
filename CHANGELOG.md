@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.1 — 2026-08-17
+
+- Fixed installation and restoration from folders whose paths contain spaces.
+- Fixed direct PowerShell use without an explicit `-GameDirectory` argument.
+- Removed the installer scripts' dependency on the `Get-FileHash` cmdlet.
+- Clarified how to copy only the supported `LIONKING` folder from the 1997
+  compilation disc before applying the patch.
+- Clarified that `F2` opens the difficulty and control-remapping options.
+- Preserved all runtime binaries and game compatibility behaviour from 1.0.0.
+
 ## 1.0.0 — 2026-07-26
 
 - First public release for the supported 1997 European Windows executable.

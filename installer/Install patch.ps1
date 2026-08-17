@@ -1,10 +1,13 @@
 [CmdletBinding()]
 param(
     [Parameter()]
-    [string]$GameDirectory = $PSScriptRoot
+    [string]$GameDirectory
 )
 
 $ErrorActionPreference = 'Stop'
+if ([string]::IsNullOrWhiteSpace($GameDirectory)) {
+    $GameDirectory = $PSScriptRoot
+}
 $originalSha256 = '3E99DC48A4B347833E3857A13E0635AB9C5A262BBCD2DBB5304A7BBE0E45DEF3'
 $patchedSha256 = 'AD28370116F86CEAAB87D77B66533018716CACB6E3E010ED63E3A053BA327EC8'
 $componentHashes = @{
@@ -66,7 +69,17 @@ $edits = @(
 )
 
 function Get-Sha256([string]$Path) {
-    (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToUpperInvariant()
+    $stream = [IO.File]::OpenRead($Path)
+    try {
+        $sha256 = [Security.Cryptography.SHA256]::Create()
+        try {
+            ([BitConverter]::ToString($sha256.ComputeHash($stream))).Replace('-', '')
+        } finally {
+            $sha256.Dispose()
+        }
+    } finally {
+        $stream.Dispose()
+    }
 }
 
 try {

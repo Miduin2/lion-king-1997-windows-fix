@@ -27,9 +27,16 @@ art, audio and native Win32 code. No game files are included.
 
 ## Installation
 
-1. Install or copy the original European Windows game from your own disc.
-2. Download the latest release ZIP.
-3. Extract every file from its `patch` folder beside `LIONW.EXE`.
+1. Download the latest release ZIP and extract it.
+2. Prepare a writable copy of the original game:
+   - for the supported 1997 European *Disney Classic Video Games* disc, mount
+     the disc or ISO and copy its complete `LIONKING` folder to your computer;
+   - you do **not** need the disc's `DIRECTX` folder, the other games or the
+     files in the disc root;
+   - if you already have a complete installation containing `LIONW.EXE`, you
+     can use that folder instead.
+3. Copy every file from the extracted release's `patch` folder into that
+   writable `LIONKING` folder, beside `LIONW.EXE`.
 4. Run `Install patch.cmd` once.
 5. From then on, start the game with `Play Lion King.exe`.
 
@@ -51,9 +58,11 @@ release has not been proven safe for it.
 
 ## Using the game
 
-- `F2`: open the original Properties panel.
-- `Esc`: pause and ask whether to exit.
-- `Alt+Tab`: switch normally between the game and other applications.
+- Press `F2` while the game is running to open its original Properties panel.
+  From there you can choose the difficulty and view or reassign the keyboard
+  and joystick controls.
+- Press `Esc` to pause and choose whether to exit the game.
+- Press `Alt+Tab` to switch normally between the game and other applications.
 
 Difficulty and remapped keyboard/joystick controls work during the current
 session. This 1997 release recreates its default bindings on every launch, so
@@ -85,7 +94,7 @@ under `recipes/`.
 
 ## Compatibility and support
 
-Version 1.0.0 was validated on Windows 10 22H2 with the opening sequence, title
+Version 1.0.1 was validated on Windows 10 22H2 with the opening sequence, title
 screen, gameplay through multiple lives, music, sound, game over, Properties,
 input remapping, pause/exit, taskbar, Alt+Tab and DWM previews.
 
